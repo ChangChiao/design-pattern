@@ -11,4 +11,4 @@ console.log("singleTon", instance1.getNum());
 
 // factory
 const airplane = new Airplane(1, 2);
-console.log("factory", airplane.show());
+airplane.show();
