@@ -1,13 +1,13 @@
-import Enemy from "./enemy.js";
-
+import Enemy from "./enemy";
 export default class Airplane extends Enemy {
-  constructor(x, y) {
-    super();
-    this.x = x;
-    this.y = y;
-  }
-
-  show() {
-    console.log("hello child", this.x);
-  }
+    x = 0;
+    y = 0;
+    constructor(x, y) {
+        super();
+        this.x = x;
+        this.y = y;
+    }
+    show() {
+        console.log("hello child", this.x);
+    }
 }

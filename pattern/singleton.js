@@ -1,16 +1,16 @@
 export default class Sun {
-  static instance = null;
-  static num = 0;
-  constructor() {
-    if (Sun.instance === null) {
-      Sun.instance = this;
+    static instance = null;
+    static num = 0;
+    constructor() {
+        if (Sun.instance === null) {
+            Sun.instance = this;
+        }
+        return Sun.instance;
     }
-    return Sun.instance;
-  }
-  addNum() {
-    Sun.num += 1;
-  }
-  getNum() {
-    return Sun.num;
-  }
+    addNum() {
+        Sun.num += 1;
+    }
+    getNum() {
+        return Sun.num;
+    }
 }

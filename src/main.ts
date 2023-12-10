@@ -1,5 +1,5 @@
-import Sun from "./pattern/singleton.js";
-import Airplane from "./pattern/factory/airplane.js";
+import { Sun } from "./pattern/singleton.js";
+import { Airplane } from "./pattern/factory/airplane.js";
 
 // singleton
 const instance1 = new Sun();
