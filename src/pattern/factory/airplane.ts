@@ -10,6 +10,7 @@ export class Airplane extends Enemy {
   }
 
   show() {
+    super.show();
     console.log("factory", this.x);
   }
 }

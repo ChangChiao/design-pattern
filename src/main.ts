@@ -4,6 +4,7 @@ import {
   ConcreteFactory1,
   ConcreteFactory2,
 } from "./pattern/AbstractFactory/abstractFactory.js";
+import { CarBuilder } from "./pattern/builder/carBuilder.js";
 
 // singleton
 const instance1 = new Sun();
@@ -31,3 +32,15 @@ clientCode(factory1);
 
 const factory2 = new ConcreteFactory2();
 clientCode(factory2);
+
+// builder
+
+const carBuilder = new CarBuilder();
+const myCar = carBuilder
+  .buildBrand("Toyota")
+  .buildModel("Camry")
+  .buildColor("Blue")
+  .buildEngine("V6")
+  .getResult();
+
+myCar.displayInfo();
