@@ -5,6 +5,7 @@ import {
   ConcreteFactory2,
 } from "./pattern/AbstractFactory/abstractFactory.js";
 import { CarBuilder } from "./pattern/builder/carBuilder.js";
+import { AudioFacade } from "./pattern/facade/audioFacade.js";
 
 // singleton
 const instance1 = new Sun();
@@ -44,3 +45,10 @@ const myCar = carBuilder
   .getResult();
 
 myCar.displayInfo();
+
+// facade
+const audioSystem = new AudioFacade();
+
+audioSystem.turnOnAudioSystem();
+
+audioSystem.turnOffAudioSystem();
