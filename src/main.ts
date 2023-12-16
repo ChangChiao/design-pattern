@@ -6,6 +6,11 @@ import {
 } from "./pattern/AbstractFactory/abstractFactory.js";
 import { CarBuilder } from "./pattern/builder/carBuilder.js";
 import { AudioFacade } from "./pattern/facade/audioFacade.js";
+import { Coffee } from "./pattern/decorator/coffee.js";
+import {
+  MilkDecorator,
+  SugarDecorator,
+} from "./pattern/decorator/decorator.js";
 
 // singleton
 const instance1 = new Sun();
@@ -52,3 +57,16 @@ const audioSystem = new AudioFacade();
 audioSystem.turnOnAudioSystem();
 
 audioSystem.turnOffAudioSystem();
+
+//Decorator
+const coffee = new Coffee();
+console.log("Cost of simple coffee:", coffee.cost());
+
+const sugarCoffee = new SugarDecorator(coffee);
+console.log("Cost of coffee with sugar:", sugarCoffee.cost());
+
+const milkCoffee = new MilkDecorator(coffee);
+console.log("Cost of coffee with milk:", milkCoffee.cost());
+
+const sugarMilkCoffee = new SugarDecorator(new MilkDecorator(coffee));
+console.log("Cost of coffee with sugar and milk:", sugarMilkCoffee.cost());
