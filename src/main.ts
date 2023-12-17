@@ -11,6 +11,7 @@ import {
   MilkDecorator,
   SugarDecorator,
 } from "./pattern/decorator/decorator.js";
+import { Adapter } from "./pattern/adapter/adapter.js";
 
 // singleton
 const instance1 = new Sun();
@@ -70,3 +71,7 @@ console.log("Cost of coffee with milk:", milkCoffee.cost());
 
 const sugarMilkCoffee = new SugarDecorator(new MilkDecorator(coffee));
 console.log("Cost of coffee with sugar and milk:", sugarMilkCoffee.cost());
+
+// adapter
+const adapter = new Adapter();
+adapter.oldMethod();
