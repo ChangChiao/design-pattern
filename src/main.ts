@@ -12,6 +12,7 @@ import {
   SugarDecorator,
 } from "./pattern/decorator/decorator.js";
 import { Adapter } from "./pattern/adapter/adapter.js";
+import { ProxyObj, RealSubject } from "./pattern/proxy/proxy.js";
 
 // singleton
 const instance1 = new Sun();
@@ -75,3 +76,9 @@ console.log("Cost of coffee with sugar and milk:", sugarMilkCoffee.cost());
 // adapter
 const adapter = new Adapter();
 adapter.oldMethod();
+
+// proxy
+const realSubject = new RealSubject();
+const proxy = new ProxyObj(realSubject);
+
+proxy.request();
