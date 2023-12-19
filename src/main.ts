@@ -13,6 +13,7 @@ import {
 } from "./pattern/decorator/decorator.js";
 import { Adapter } from "./pattern/adapter/adapter.js";
 import { ProxyObj, RealSubject } from "./pattern/proxy/proxy.js";
+import { FlyweightFactory } from "./pattern/flyweight/flyweightFactory.js";
 
 // singleton
 const instance1 = new Sun();
@@ -82,3 +83,13 @@ const realSubject = new RealSubject();
 const proxy = new ProxyObj(realSubject);
 
 proxy.request();
+
+// flyweight
+const factory = new FlyweightFactory();
+const flyweight1 = factory.getData("A");
+flyweight1.operation("1");
+const flyweight2 = factory.getData("B");
+flyweight2.operation("2");
+const flyweight3 = factory.getData("A");
+flyweight3.operation("3");
+console.log(`Number of flyweights created: ${factory.getFlyweightsCount()}`);
