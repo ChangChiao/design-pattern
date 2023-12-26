@@ -1,19 +1,22 @@
-import { Sun } from "./pattern/singleton.js";
-import { Airplane } from "./pattern/factory/airplane.js";
+import { Sun } from "./creationalDesignPatterns/singleton/singleton.js";
+import { Airplane } from "./creationalDesignPatterns/factory/airplane.js";
 import {
   ConcreteFactory1,
   ConcreteFactory2,
-} from "./pattern/AbstractFactory/abstractFactory.js";
-import { CarBuilder } from "./pattern/builder/carBuilder.js";
-import { AudioFacade } from "./pattern/facade/audioFacade.js";
-import { Coffee } from "./pattern/decorator/coffee.js";
+} from "./creationalDesignPatterns/abstractFactory/abstractFactory.js";
+import { CarBuilder } from "./creationalDesignPatterns/builder/carBuilder.js";
+import { AudioFacade } from "./structuralDesignPatterns/facade/audioFacade.js";
+import { Coffee } from "./structuralDesignPatterns/decorator/coffee.js";
 import {
   MilkDecorator,
   SugarDecorator,
-} from "./pattern/decorator/decorator.js";
-import { Adapter } from "./pattern/adapter/adapter.js";
-import { ProxyObj, RealSubject } from "./pattern/proxy/proxy.js";
-import { FlyweightFactory } from "./pattern/flyweight/flyweightFactory.js";
+} from "./structuralDesignPatterns/decorator/decorator.js";
+import { Adapter } from "./structuralDesignPatterns/adapter/adapter.js";
+import {
+  ProxyObj,
+  RealSubject,
+} from "./structuralDesignPatterns/proxy/proxy.js";
+import { FlyweightFactory } from "./structuralDesignPatterns/flyweight/flyweightFactory.js";
 
 // singleton
 const instance1 = new Sun();
