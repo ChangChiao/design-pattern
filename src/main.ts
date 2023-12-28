@@ -17,6 +17,9 @@ import {
   RealSubject,
 } from "./structuralDesignPatterns/proxy/proxy.js";
 import { FlyweightFactory } from "./structuralDesignPatterns/flyweight/flyweightFactory.js";
+import { Product } from "./structuralDesignPatterns/composite/product.js";
+import { Bag } from "./structuralDesignPatterns/composite/bag.js";
+import { Box } from "./structuralDesignPatterns/composite/box.js";
 
 // singleton
 const instance1 = new Sun();
@@ -96,3 +99,24 @@ flyweight2.operation("2");
 const flyweight3 = factory.getData("A");
 flyweight3.operation("3");
 console.log(`Number of flyweights created: ${factory.getFlyweightsCount()}`);
+
+// composite
+
+const pen = new Product("pen", 60);
+const eraser = new Product("eraser", 20);
+
+const bagA = new Bag();
+bagA.addProduct(pen);
+bagA.addProduct(pen);
+
+const bagB = new Bag();
+bagB.addProduct(pen);
+bagB.addProduct(pen);
+bagB.addProduct(pen);
+
+const box = new Box();
+box.addProduct(bagA);
+box.addProduct(bagB);
+box.addProduct(eraser);
+
+console.log("box.totalPrice", box.totalPrice);
