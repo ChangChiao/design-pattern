@@ -20,6 +20,12 @@ import { FlyweightFactory } from "./structuralDesignPatterns/flyweight/flyweight
 import { Product } from "./structuralDesignPatterns/composite/product.js";
 import { Bag } from "./structuralDesignPatterns/composite/bag.js";
 import { Box } from "./structuralDesignPatterns/composite/box.js";
+import { Invoker } from "./behavioralDesignPatterns/command/invoker.js";
+import { Receiver } from "./behavioralDesignPatterns/command/receiver.js";
+import {
+  ConcreteCommand1,
+  ConcreteCommand2,
+} from "./behavioralDesignPatterns/command/command.js";
 
 // singleton
 const instance1 = new Sun();
@@ -120,3 +126,16 @@ box.addProduct(bagB);
 box.addProduct(eraser);
 
 console.log("box.totalPrice", box.totalPrice);
+
+//command
+const receiver = new Receiver();
+const command1 = new ConcreteCommand1(receiver);
+const command2 = new ConcreteCommand2(receiver);
+
+const invoker = new Invoker();
+
+invoker.setCommand(command1);
+invoker.executeCommand();
+
+invoker.setCommand(command2);
+invoker.executeCommand();
