@@ -26,6 +26,7 @@ import {
   ConcreteCommand1,
   ConcreteCommand2,
 } from "./behavioralDesignPatterns/command/command.js";
+import { NumberIterator } from "./behavioralDesignPatterns/Iterator/numberIterator.js";
 
 // singleton
 const instance1 = new Sun();
@@ -127,7 +128,7 @@ box.addProduct(eraser);
 
 console.log("box.totalPrice", box.totalPrice);
 
-//command
+// command
 const receiver = new Receiver();
 const command1 = new ConcreteCommand1(receiver);
 const command2 = new ConcreteCommand2(receiver);
@@ -139,3 +140,12 @@ invoker.executeCommand();
 
 invoker.setCommand(command2);
 invoker.executeCommand();
+
+// iterator
+const iterator = new NumberIterator(1, 5);
+
+let result = iterator.next();
+while (!result.done) {
+  console.log(result.value);
+  result = iterator.next();
+}
