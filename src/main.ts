@@ -27,6 +27,10 @@ import {
   ConcreteCommand2,
 } from "./behavioralDesignPatterns/command/command.js";
 import { NumberIterator } from "./behavioralDesignPatterns/Iterator/numberIterator.js";
+import {
+  ConcreteHandler1,
+  ConcreteHandler2,
+} from "./behavioralDesignPatterns/chainOfResponsibility/concreteHandler.js";
 
 // singleton
 const instance1 = new Sun();
@@ -149,3 +153,15 @@ while (!result.done) {
   console.log(result.value);
   result = iterator.next();
 }
+
+// chain of Responsibility
+
+const handler1 = new ConcreteHandler1();
+const handler2 = new ConcreteHandler2();
+
+//create chain
+handler1.setSuccessor(handler2);
+
+handler1.handleRequest("Type1");
+handler1.handleRequest("Type2");
+handler1.handleRequest("Type3");
